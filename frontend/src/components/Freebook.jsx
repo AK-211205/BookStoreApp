@@ -47,7 +47,9 @@ function Freebook() {
             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
                 <div>
                 <h1 className="font-semibold text-xl pb-2">Free Offered Books</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repellat saepe dolorum harum qui doloribus debitis corporis architecto autem voluptas minus numquam ratione, temporibus nihil impedit deserunt rerum nulla quaerat.</p>
+                <p>Explore our collection of free books, generously donated by individuals who believe in the power of sharing knowledge. 
+                    Whether you're a curious reader or a passionate learner, these books are here to inspire and educate. 
+                    No cost, no catch—just the joy of reading.</p>
                 </div>
             
             <div>
