@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import {useState} from "react"
 import Login from "./Login"
+
 function Navbar() {
     // const [theme,setTheme]=useState(localStroage.getItem("theme")?localStorage.getItem("theme"):"light")
     const [sticky, setSticky]=useState(false)
@@ -26,10 +27,13 @@ function Navbar() {
                 <a href="/course">Course</a>
             </li>
             <li>
-                <a>Contact</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeK6GfDHUN7D0uekN7g3uBsdeFv3iZXN_wzTSdh-gqVmNkDCQ/viewform" target="_blank" rel="noopener noreferrer">Donate</a>
             </li>
             <li>
-                <a>About</a>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZQPqoK80mjpaS61uOLqtykI19uYUp2H7YuEoAw8sI6nZTGg/viewform" target="_blank" rel="noopener noreferrer">Feedback</a>
             </li>
         </>)
     return (
@@ -61,7 +65,7 @@ function Navbar() {
                                 {navItems}
                             </ul>
                         </div>
-                        <a className="text-2xl font-bold cursor-pointer">BookStore</a>
+                        <a className="text-2xl font-bold cursor-pointer">Book Bridge</a>
                     </div>
                     <div className="navbar-end space-x-3">
                         <div className="navbar-center hidden lg:flex">

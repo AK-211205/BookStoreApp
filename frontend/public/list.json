@@ -2,7 +2,7 @@
     {
         "id":1,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"Whispers of the Enchanted Forest",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -12,7 +12,7 @@
     {
         "id":2,
         "name":"comedy book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Comedy Compass",
         "price":20,
         "category":"entertainment",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -22,7 +22,7 @@
     {
         "id":3,
         "name":"Sports book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"Game On: The Playbook",
         "price":50,
         "category":"sports",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -31,7 +31,7 @@
     {
         "id":4,
         "name":"Music book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Music Mania",
         "price":100,
         "category":"Song",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -49,7 +49,7 @@
     {
         "id":6,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Lost Treasure of Captain Crow",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -58,7 +58,7 @@
     {
         "id":7,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"Adventures Beyond the Rainbow",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -67,7 +67,7 @@
     {
         "id":8,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Time-Traveling Twins",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -76,7 +76,7 @@
     {
         "id":9,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Kingdom of Forgotten Stories",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -85,7 +85,7 @@
     {
         "id":10,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Mysterious Island of Shadows",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
@@ -94,7 +94,7 @@
     {
         "id":11,
         "name":"Story Book",
-        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "title":"The Dreamweaver’s Journey",
         "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1721754556~exp=1721758156~hmac=72980156c775cdde1b5d8c932f59bec97bb6caada01781897353cbc340d5f1db&w=740"
