@@ -30,7 +30,7 @@ function Banner() {
         <img
           src="/Banner.jpg"
           alt="Banner"
-          className="w-full max-w-6xl mx-auto object-contain"
+          className="w-full max-w-8xl mx-auto object-contain"
         />
       </motion.div>
 
@@ -89,3 +89,60 @@ function Banner() {
 }
 
 export default Banner;
+
+
+
+// import React from 'react';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+
+// function Banner() {
+//   const { scrollY } = useScroll();
+
+//   // 🎬 Animate image moving left and shrinking
+//   const imageX = useTransform(scrollY, [0, 400], ['0%', '-40%']);
+//   const imageScale = useTransform(scrollY, [0, 400], [1, 0.8]);
+
+//   // 🎬 Animate text fading in from right
+//   const textOpacity = useTransform(scrollY, [200, 500], [0, 1]);
+//   const textX = useTransform(scrollY, [200, 500], ['40%', '0%']);
+
+//   return (
+//     <div className="w-full h-screen flex flex-col justify-center items-center relative overflow-hidden bg-white">
+//       {/* Animated Image */}
+//       <motion.div
+//         className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-10"
+//         style={{
+//           x: imageX,
+//           scale: imageScale,
+//         }}
+//       >
+//         <img
+//           src="/Banner.jpg"
+//           alt="Banner"
+//           className="w-full max-w-[900px] object-contain"
+//         />
+//       </motion.div>
+
+//       {/* Animated Text */}
+//       <motion.div
+//         className="absolute right-0 top-0 h-full flex items-center justify-center z-20 px-8 max-w-2xl text-left"
+//         style={{
+//           opacity: textOpacity,
+//           x: textX,
+//         }}
+//       >
+//         <div className="bg-white/90 p-6 md:p-10 rounded-xl shadow-xl backdrop-blur">
+//           <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-4">
+//             A book is a dream that you hold in your hands.{' '}
+//             <span className="text-pink-500">— Neil Gaiman.</span>
+//           </h1>
+//           <p className="text-base md:text-lg text-gray-700">
+//             Welcome to our Book Bridge, a unique platform dedicated to redistributing books to those in need. Our mission is to collect donated books from individuals and connect them with NGOs and orphanages, ensuring that children have access to a wide range of reading materials at no cost. By giving these books a second life, we hope to foster a love for reading and learning among underprivileged communities. Join us in this initiative to spread knowledge and make a difference — one book at a time.
+//           </p>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// }
+
+// export default Banner;
