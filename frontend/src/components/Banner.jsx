@@ -92,6 +92,9 @@ export default Banner;
 
 
 
+
+
+
 // import React from 'react';
 // import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -139,6 +142,74 @@ export default Banner;
 //           <p className="text-base md:text-lg text-gray-700">
 //             Welcome to our Book Bridge, a unique platform dedicated to redistributing books to those in need. Our mission is to collect donated books from individuals and connect them with NGOs and orphanages, ensuring that children have access to a wide range of reading materials at no cost. By giving these books a second life, we hope to foster a love for reading and learning among underprivileged communities. Join us in this initiative to spread knowledge and make a difference — one book at a time.
 //           </p>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// }
+
+// export default Banner;
+
+
+
+
+// import React from 'react';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+
+// function Banner() {
+//   const { scrollY } = useScroll();
+
+//   // Image animation - shrinks and moves left
+//   const imageX = useTransform(scrollY, [0, 500], ['0%', '-25%']);
+//   const imageScale = useTransform(scrollY, [0, 500], [1, 0.6]);
+//   const imageWidth = useTransform(scrollY, [0, 500], ['100%', '50%']);
+
+//   // Text animation - fades in and centers
+//   const textOpacity = useTransform(scrollY, [100, 400], [0, 1]);
+//   const textScale = useTransform(scrollY, [100, 400], [0.9, 1]);
+
+//   return (
+//     <div className="w-full h-screen relative overflow-hidden bg-white sticky top-0">
+//       {/* Shrinking Image on Left */}
+//       <motion.div
+//         className="absolute left-0 top-0 h-full flex justify-center items-center z-10"
+//         style={{
+//           x: imageX,
+//           scale: imageScale,
+//           width: imageWidth,
+//         }}
+//       >
+//         <img
+//           src="/Banner.jpg"
+//           alt="Banner"
+//           className="h-full object-cover"
+//         />
+//       </motion.div>
+
+//       {/* Centered Content */}
+//       <motion.div
+//         className="absolute inset-0 flex items-center justify-center z-20 px-8"
+//         style={{
+//           opacity: textOpacity,
+//           scale: textScale,
+//         }}
+//       >
+//         <div className="bg-white/90 p-8 rounded-xl shadow-xl backdrop-blur max-w-2xl w-full">
+//           <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-4 text-center">
+//             Book Bridge
+//           </h1>
+//           <blockquote className="text-2xl italic mb-6 text-gray-700 text-center">
+//             "A book is a dream that you hold in your hands."
+//             <span className="not-italic text-pink-600"> — Neil Gaiman</span>
+//           </blockquote>
+//           <div className="text-lg text-gray-600 space-y-4 text-center">
+//             <p>
+//               Welcome to our Book Bridge, a unique platform dedicated to redistributing books to those in need.
+//             </p>
+//             <p>
+//               Our mission is to collect donated books from individuals and connect them with NGOs and orphanages.
+//             </p>
+//           </div>
 //         </div>
 //       </motion.div>
 //     </div>
