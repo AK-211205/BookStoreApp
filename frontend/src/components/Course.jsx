@@ -1,135 +1,46 @@
-// // import React from 'react'
-// import React, { useEffect, useState } from 'react'
-// import Cards from "./Cards"
-// // import list from "../../public/list.json"
-// import axios from "axios"
-// import {Link} from "react-router-dom"
-// function Course() {
-//     console.log("Course component rendered"); 
-//     useEffect(()=>{
-//       const [book, setBook]=useState([])
-//       useEffect(()=>{
-//         const getBook=async()=>{
-//           try{
-//             const res= await axios.get("http://localhost:4001/Book");
-//             console.log(res.data)
-//             setBook(res.data)
-//           }catch (error){
-//             console.log(error)
-//           }
-//         }
-//         getBook();
-//       })
-//     },[]
-//     );
-//   return (
-//     <>
-//       <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
-//         <div className="mt-28 items-center justify-center text-center">
-//           <h1 className="text-2xl md:text-4xl">
-//             We are delighted to have you{""}
-//             <span className="text-pink-500"> Here!!! :)</span>
-//           </h1>
-//           <p className="mt-12">
-//           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repellat saepe dolorum harum qui doloribus debitis corporis architecto autem voluptas minus numquam ratione, temporibus nihil impedit deserunt rerum nulla quaerat.
-//           </p>
-//           <Link to="/">
-//             <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
-//             Back
-//             </button>
-//           </Link>
-//         </div>
-//         <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
-//             {
-//               Book.map((item)=>(
-//                 <Cards key={item.id} item={item}/>
-//               ))
-//             }
-//         </div>
-//       </div>
-//     </>
-//   )
-// }
-
-// export default Course
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import Cards from "./Cards";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-
-// function Course() {
-//     console.log("Course component rendered"); 
-
-//     const [book, setBook] = useState([]);
-
-//     useEffect(() => {
-//         const getBook = async () => {
-//             try {
-//                 const res = await axios.get("http://localhost:4001/Book");
-//                 console.log(res.data);
-//                 setBook(res.data);
-//             } catch (error) {
-//                 console.log(error);
-//             }
-//         };
-//         getBook();
-//     }, []); // Empty dependency array ensures this effect runs only once
-
-//     return (
-//         <>
-//             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
-//                 <div className="mt-28 items-center justify-center text-center">
-//                     <h1 className="text-2xl md:text-4xl">
-//                         We are delighted to have you
-//                         <span className="text-pink-500"> Here!!! :)</span>
-//                     </h1>
-//                     <p className="mt-12">
-//                      "Your unused books can become someone else's treasure. Donate today".
-                     
-//                     </p>
-//                     <p>
-//                         "Books have the power to change lives. Share that power by donating your books".
-//                     </p>
-//                     <Link to="/">
-//                         <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
-//                             Back
-//                         </button>
-//                     </Link>
-//                 </div>
-//                 <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
-//                     {
-//                         book.map((item) => (
-//                             <Cards key={item.id} item={item} />
-//                         ))
-//                     }
-//                 </div>
-//             </div>
-//         </>
-//     );
-// }
-
-// export default Course;
-
-
-
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Cards from "./Cards";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Course() {
-    console.log("Course component rendered"); 
-
     const [cards, setCards] = useState([]);
+    const containerRef = useRef(null);
+    const [scrollDirection, setScrollDirection] = useState("down");
 
+    // ✅ Scroll direction detection
     useEffect(() => {
-        // In a real app, you would fetch this data from your backend
-        // For now, we'll use static data matching your image
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const currentY = window.scrollY;
+            if (currentY > lastScrollY) {
+                setScrollDirection("down");
+            } else if (currentY < lastScrollY) {
+                setScrollDirection("up");
+            }
+            lastScrollY = currentY;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // ✅ Scroll tracking for glow animation
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const borderScale = useTransform(scrollYProgress, [0, 1], [0.9, 1.1]);
+
+    // ✅ Glow color changes based on scroll direction
+    const glowColor = scrollDirection === "down"
+        ? "rgba(0, 255, 255, 1)"   // Aqua
+        : "rgba(255, 0, 255, 1)";  // Magenta
+
+    // ✅ Dummy card data
+    useEffect(() => {
         const mockCards = [
             {
                 id: 1,
@@ -167,34 +78,22 @@ function Course() {
                 ]
             }
         ];
-        
+
         setCards(mockCards);
-        
-        // In a real implementation, you would use something like this:
-        /*
-        const getCards = async () => {
-            try {
-                const res = await axios.get("http://localhost:4001/cards");
-                setCards(res.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getCards();
-        */
     }, []);
 
     return (
         <>
             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
+                {/* Header Section */}
                 <div className="mt-28 items-center justify-center text-center">
                     <h1 className="text-2xl md:text-4xl">
                         We are delighted to have you 
                         <span className="text-pink-500"> Here!!! :)</span>
                     </h1>
                     <p className="mt-12 text-[24px]">
-                        "Your unused books can become someone else's treasure. Donate today 
-                        Books have the power to change lives. Share that power by donating your books"
+                        Your unused books can become someone else's treasure. Donate today. 
+                        Books have the power to change lives. Share that power by donating your books.
                     </p>
                     
                     <Link to="/">
@@ -203,11 +102,52 @@ function Course() {
                         </button>
                     </Link>
                 </div>
+
+                {/* Cards Section */}
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                     {cards.map((item) => (
                         <Cards key={item.id} item={item} />
                     ))}
                 </div>
+
+                {/* Glowing Image Section */}
+                <div className="mt-12 flex justify-center" ref={containerRef}>
+                    <div className="relative w-full max-w-4xl rounded-lg">
+                        {/* Glowing Border */}
+                        <motion.div
+                            className="absolute inset-0 z-10 rounded-lg pointer-events-none"
+                            style={{
+                                scale: borderScale,
+                            }}
+                            animate={{
+                                boxShadow: [
+                                    `0 0 0px 0px ${glowColor}`,
+                                    `0 0 40px 20px ${glowColor}`,
+                                    `0 0 80px 40px ${glowColor}`,
+                                    `0 0 40px 20px ${glowColor}`,
+                                    `0 0 0px 0px ${glowColor}`
+                                ],
+                                filter: "blur(4px)"
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        />
+
+                        {/* Image */}
+                        <motion.img 
+                            src="/Banner.jpg" 
+                            alt="Book donation visual"
+                            className="w-full h-auto rounded-lg shadow-xl relative z-20 bg-white"
+                            whileHover={{ scale: 1.02 }}
+                            initial={{ scale: 1 }}
+                        />
+                    </div>
+                </div>
+
+                <div className="h-[50vh]"></div>
             </div>
         </>
     );
